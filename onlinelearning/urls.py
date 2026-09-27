@@ -18,12 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from courses import views 
+from django.contrib import admin
+from django.urls import path, include, re_path
+from courses import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('courses.urls')),
-    path('lesson/<int:lesson_id>/quiz/', views.quiz_view, name='quiz_view')
+    path('lesson/<int:lesson_id>/quiz/', views.quiz_view, name='quiz_view'),
 
+    re_path(r'^media/(?P<path>.*)$', views.serve_media, name='serve_media'),
 ]
 
 # if settings.DEBUG:
