@@ -9,7 +9,10 @@
 </head>
 <body>
     <section class="detail-container">
-        <img src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
+        <p>Thumbnail: {{ course.thumbnail }}</p>
+<p>Thumbnail URL: {{ course.thumbnail.url }}</p>
+
+<img src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
         <h1>{{ course.title }}</h1>
         <p>{{ course.description }}</p>
         {% if course.learn_link %}
