@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.title }} | TutoriaLearn</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <section class="detail-container">
+        <img src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
+        <h1>{{ course.title }}</h1>
+        <p>{{ course.description }}</p>
+        {% if course.learn_link %}
+        <a href="{{ course.learn_link }}" class="btn btn-learn" target="_blank">📘 Learn Now</a>
+        {% endif %}
+         <hr>
+        <h2>📚 Lessons</h2>
+        <ul class="lesson-list">
+            {% for lesson in lessons %}
+                <li>
+                    {{ lesson.title }}
+                    {% if lesson.external_link %}
+                    <iframe width="560" height="315" src="{{lesson.external_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    {% elif lesson.video %}
+                        - <a href="{{ lesson.video.url }}" target="_blank" class="btn btn-secondary">Play Video</a>
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>No lessons added yet.</li>
+            {% endfor %}
+        </ul>
+<br>
+{% for lesson in lessons %}
+    <li>
+        {{ lesson.title }}
+
+        {% if lesson.quiz and lesson.id %}
+            <a href="{% url 'quiz_view' lesson.id %}" class="btn btn-secondary">Take Quiz</a>
+        {% else %}
+            No Quiz
+        {% endif %}
+    </li>
+{% endfor %}
+
+<br>
+
+
+
+
+        <br>
+        <a href="/" class="btn btn-secondary">← Back to Courses</a>
+    </section>
+</body>
+</html>

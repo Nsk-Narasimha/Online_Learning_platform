@@ -1,0 +1,142 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f8fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.main-header {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 4px solid #0056b3;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.main-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s ease;
+    padding: 20px;
+}
+
+.course-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.course-card h2 {
+    font-size: 1.4rem;
+    margin: 0 0 10px;
+}
+
+.course-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #198754;
+    color: rgb(250, 253, 249);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #157347;
+}
+
+.btn-secondary {
+    background: #0a75d3;
+    margin-left: 10px;
+}
+
+.detail-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.detail-container img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .course-grid {
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .main-header p {
+        font-size: 1rem;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+.lesson-list {
+    list-style: none;
+    padding: 0;
+}
+.lesson-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+.navbar {
+            background-color: #007bff;
+        }
+.navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+
+
